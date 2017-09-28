@@ -1,7 +1,5 @@
-body {
-	font-family:Arial,Helvettica,sans-serif;
-	background-color:#333333;
-}
+/*
+
 header {
 width:80%;
 background-color:black;
@@ -52,11 +50,7 @@ h3 {
 font-size:1.3em;
 }
 
-hgroup {
-width:70%;
-float:left;
 
-}
 
 hgroup h1 {
 padding-top:0;
@@ -68,17 +62,7 @@ font-size:1.2em;
 line-height:1em;
 
 }
-nav {
-width:30%;
-float:right;
-}
-nav ul {
-list-style-type:none;
-}
-nav li {
-float:left;
-margin-right:5px;
-}
+
 
 aside {
 width:80%;
@@ -89,4 +73,85 @@ background:#eeff99;
 padding:20px;
 border:1px solid #696;
 border-radius:20px;
+}
+*/
+html {
+height:85%;
+}
+body {
+	font-family:Arial,Helvettica,sans-serif;
+	background-color:#565656;
+	height:90%;
+}
+header {
+height:15%;
+}
+
+nav {
+width:30%;
+float:right;
+background-color:#b1b7b7;
+height:100%;
+}
+nav ul {
+list-style-type:none;
+}
+nav li {
+float:left;
+margin-right:5px;
+background-color:#565656;
+}
+nav a[href]:visited {
+text-decoration:none;
+}
+nav a[href]:link{
+text-decoration:none;
+}
+nav a[href]:hover{
+text-decoration:none;
+}
+hgroup {
+width:69%;
+float:left;
+background-color:#b1b7b7;
+padding-left:1%;
+line-height:1em;
+height:100%;
+}
+hr {
+clear:both;
+visibility:hidden;
+margin:0;
+border:0;
+}
+.elem {
+margin:0;
+}
+#main {
+height:90%;
+background-color:#787a79;
+}
+#about {
+width:100%;
+height:90px;
+background-color:#cdc7bb;
+color:white;
+}
+#links {
+width:25%;
+height:98%;
+background-color:#e2e3de;
+color:white;
+float:left;
+display:inline;
+margin:0.5%;
+}
+#projects {
+width:65%;
+height:98%;
+background-color:#e2e3de;
+float:right;
+display:inline;
+color:white;
+margin:0.5%;
 }
