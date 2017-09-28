@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lesson 11 - Form Validation and other Future HTML5 Form Enhancements</title>
+  <style type="text/css" media="all">
+    span {
+      width: 175px;
+      display:block;
+      float:left;
+    }
+    input {
+      float:left;
+    }
+    p {
+      padding-top:10px;
+      clear: all;
+    }
+    h2 {
+      padding-top:20px;
+      clear: all;
+    }
+    label {
+      padding-right:20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Creating Forms</h1>
+
+<form method="POST" action="form.aspx">
+
+<h2>email</h2>
+<p><label><span>Email input: </span><input type=email name=emailinput required></label></p>
+<h2>tel</h2>
+<p><label><span>Telephone input: </span><input type=tel name=telinput required></label></p>
+<h2>url</h2>
+<p><label><span>URL input: </span><input type=url name=urlinput required></label></p>
+<h2>numeric</h2>
+<p><label><span>number input: </span><input type=number name=numinput required></label></p>
+<p><label><span>Range input: </span><input type=range name=raneninput value=42 required></label></p>
+<h2>data list</h2>
+<p><label><span>data list input: </span>
+<input type=text list=somelist>
+<datalist id=somelist>
+<option lable=first value="f">
+<option lable=second value="s">
+<option lable=third value="t">
+</datalist>
+
+<h2>attribute</h2>
+<p><label><span>autofocus: </span><input type=text autofocus></label></p>
+<p><label><span>pattern: </span><input type=text pattern="^\d{5}(-\d{4})?$"></label></p>
+<p><label><span>placeholder: </span><input type=text placeholder="gfd"></label></p>
+<p><label><span>step: </span><input type=number step=5></label></p>
+</label></p>
+
+
+
+
+
+<p><button>Submit</button></p>
+
+</form>
+
+</body>
+</html>
