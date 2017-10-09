@@ -1,0 +1,193 @@
+/*
+
+header {
+width:80%;
+background-color:black;
+color:white;
+margin-right:auto;
+margin-left:auto;
+padding:10px;
+overflow:hidden;
+}
+section {
+width:80%;
+background-color:white;
+margin-right:auto;
+margin-left:auto;
+border-color:black;
+border-style:solid;
+border-width:5px;
+padding:5px;
+}
+p {
+margin:10px;
+}
+img {
+float:right;
+margin:0px 0px 10px 10px;
+box-shadow:3px 3px 5px 1px #cccccc;
+}
+footer {
+width:80%;
+background-color:black;
+color:white;
+margin-right:auto;
+margin-left:auto;
+height:50px;
+padding:10px;
+}
+
+h1 {
+font-size:2em;
+margin:0;
+padding:0;
+padding-top:10px;
+}
+h2 {
+font-size:1.6em;
+}
+h3 {
+font-size:1.3em;
+}
+
+
+
+hgroup h1 {
+padding-top:0;
+line-height:1em;
+}
+hgroup h2 {
+text-transform:uppercase;
+font-size:1.2em;
+line-height:1em;
+
+}
+
+
+aside {
+width:80%;
+margin-right:auto;
+margin-left:auto;
+font-size:.8em;
+background:#eeff99;
+padding:20px;
+border:1px solid #696;
+border-radius:20px;
+}
+*/
+html {
+height:85%;
+}
+body {
+	font-family:Arial,Helvettica,sans-serif;
+	background-color:#565656;
+	height:90%;
+}
+header {
+height:15%;
+padding:0;
+width:100%;
+}
+
+nav {
+width:auto;
+float:left;
+background-color:#b1b7b7;
+height:100%;
+display:flex;
+}
+nav ul {
+list-style-type:none;
+}
+nav li {
+float:left;
+margin-right:5px;
+}
+nav a[href]:visited {
+text-decoration:none;
+color:black;
+}
+nav a[href]:link{
+text-decoration:none;
+color:black;
+}
+nav a[href]:hover{
+text-decoration:underline;
+color:white;
+}
+hgroup {
+width:75%;
+float:left;
+background-color:#b1b7b7;
+padding-left:1%;
+line-height:1em;
+height:100%;
+}
+hgroup h2 {
+text-transform:uppercase;
+font-size:1.1em;
+}
+
+hr {
+clear:both;
+visibility:hidden;
+margin:0;
+border:0;
+}
+.elem {
+margin:0;
+padding:5px;
+}
+#profile_pic {
+height:100%;
+/*width:10%;*/
+float:left;
+}
+#main {
+height:100%;
+background-color:#787a79;
+border-radius:10px;
+}
+#about {
+height:10%;
+background-color:#cdc7bb;
+color:#565656;
+border-radius:10px;
+}
+#about h3{
+padding:0;
+margin-bottom:2px;
+margin-top:0;
+}
+#about p{
+margin:0;
+}
+#leftbox {
+width:17%;
+height:85%;
+background-color:#e2e3de;
+color:#565656;
+float:left;
+display:inline;
+margin:0.5%;
+border-width:3px;
+border-color:#565656;
+border-style:solid;
+border-radius:20px;
+}
+#projects {
+width:77%;
+height:85%;
+background-color:#e2e3de;
+float:left;
+display:inline;
+color:#565656;
+margin:0.5%;
+border-width:3px;
+border-color:#565656;
+border-style:solid;
+border-radius:20px;
+}
+
+p{
+line-height:1em;}
