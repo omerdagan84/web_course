@@ -232,6 +232,7 @@ line-height:1em;
 margin:0;
 }
 */
+/*
 html, body {
   width: 100vw;
   min-height: 100vh;
@@ -253,3 +254,34 @@ header {
 nav {
   grid-area: nav;
 }
+body {
+  margin: 40px;
+}
+*/
+#topbar {
+	grid-area:topbar;
+}
+#main {
+	grid-area:main;
+}
+#leftbox {
+	grid-area:leftbox;
+	
+}
+#projects {
+grid-area:projects;
+background-color:#e2e3de;
+}
+
+
+#wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+		"topbar topbar topbar topbar"
+        "leftbox main main main"
+        background-color: #fff;
+        color: #444;
+    }
+	
