@@ -1,3 +1,130 @@
+html {
+height:100vh;
+background-color: #05386b;
+}
+body {
+display: block;
+  height:100%;
+}
+
+#topbar {
+	grid-area:top;
+	background-color:#379683;
+	grid-row: 1;
+	color: #edf5e1;
+}
+#about {
+	grid-area:about;
+	background-color:#8ee4af;
+	grid-row: 2;
+}
+#leftbox {
+	grid-area:left;
+	background-color:#8ee4af;
+	grid-row: 3;
+	
+}
+/*
+#leftbox {
+width:17%;
+height:78%;
+background-color:#e2e3de;
+color:#565656;
+float:left;
+display:inline-block;
+margin:0.5%;
+border-width:3px;
+border-color:#565656;
+
+min-width:150px;
+
+bottom:0;
+}
+*/
+#projects {
+grid-area:projects;
+background-color:#edf5e1;
+grid-row: 3;
+}
+
+
+#wrapper {
+height:90%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-areas:
+		"top top top top"
+		"about about about about"
+        "left projects projects projects";
+	grid-template-rows: 150px 15% 1fr;
+        color: #444;
+}
+.elem{
+padding-left:5px;
+border-radius:20px;
+overflow:hidden;
+min-width:150px;
+}
+#profile_pic {
+height:150px;
+float:left;
+margin-left:0;
+display:inline;
+}
+nav {
+width:20%;
+float:right;
+height:100%;
+display:inline-block;
+margin-right:auto;
+min-width:170px;
+overflow:hidden;
+}
+nav ul {
+list-style-type:none;
+}
+nav li {
+float:left;
+margin-right:5px;
+}
+nav a[href]:visited {
+text-decoration:none;
+color:#edf5e1;
+}
+nav a[href]:link{
+text-decoration:none;
+color:#edf5e1;
+}
+nav a[href]:hover{
+text-decoration:underline;
+color:black;
+}
+
+hgroup {
+width:50%;
+float:left;
+line-height:1em;
+height:100%;
+overflow:hidden;
+display:inline;
+min-width:280px;
+}	
+hgroup h1 {
+padding-left:5%;
+}
+hgroup h2 {
+text-transform:uppercase;
+font-size:80%;
+padding-left:8%;
+}
+#about h3{
+text-transform:uppercase;
+padding:0;
+margin-bottom:2px;
+margin-top:0;
+overflow:hidden;
+}
 /*
 
 header {
@@ -57,7 +184,7 @@ padding-top:0;
 line-height:1em;
 }
 hgroup h2 {
-text-transform:uppercase;
+
 font-size:1.2em;
 line-height:1em;
 
@@ -85,28 +212,8 @@ width:auto;
 display:block;
 min-height:100px;
 }
-nav {
-width:20%;
-float:left;
-background-color:#b1b7b7;
-height:100%;
-display:inline-block;
-margin-right:auto;
-min-width:160px;
-overflow:hidden;
-}
 */
-hgroup {
-width:75%;
-float:left;
-background-color:#b1b7b7;
-padding-left:1%;
-line-height:1em;
-height:100%;
-overflow:hidden;
-display:inline;
-min-width:280px;
-}
+
 /*
 #content_box {
 min-width:640px;
@@ -135,30 +242,8 @@ width:100%;
 }
 */
 
-nav ul {
-list-style-type:none;
-}
-nav li {
-float:left;
-margin-right:5px;
-}
-nav a[href]:visited {
-text-decoration:none;
-color:black;
-}
-nav a[href]:link{
-text-decoration:none;
-color:black;
-}
-nav a[href]:hover{
-text-decoration:underline;
-color:white;
-}
 
-hgroup h2 {
-text-transform:uppercase;
-font-size:80%;
-}
+
 /*
 hr {
 clear:both;
@@ -171,12 +256,8 @@ margin:0;
 padding:5px;
 }
 */
-#profile_pic {
-height:100%;
-float:left;
-margin-left:0;
-display:inline;
-}
+
+
 /*
 #main {
 height:100%;
@@ -185,29 +266,9 @@ border-radius:10px;
 position:relative;
 }
 
-#about h3{
-padding:0;
-margin-bottom:2px;
-margin-top:0;
-overflow:hidden;
-}
 
-#leftbox {
-width:17%;
-height:78%;
-background-color:#e2e3de;
-color:#565656;
-float:left;
-display:inline-block;
-margin:0.5%;
-border-width:3px;
-border-color:#565656;
-border-style:solid;
-border-radius:20px;
-min-width:150px;
 
-bottom:0;
-}
+
 #projects {
 width:77%;
 height:78%;
@@ -237,43 +298,3 @@ margin:0;
 }
 */
 
-body {
-display: block;
-  height:10vh;
-}
-
-#topbar {
-	grid-area:top;
-	background-color:#e2e3de;
-	grid-row: 1;
-}
-#about {
-	grid-area:about;
-	background-color:#e2e3de;
-	grid-row: 2;
-}
-#leftbox {
-	grid-area:left;
-	background-color:#e2e3de;
-	grid-row: 3/6;
-}
-#projects {
-grid-area:projects;
-background-color:#e2e3de;
-grid-row: 3/6;
-}
-
-
-#wrapper {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
-    grid-template-areas:
-		"top top top top"
-		"about about about about"
-        "left projects projects projects";
-	grid-template-rows: repeat(5, 1fr  );
-        background-color: #fff;
-        color: #444;
-}
-	
