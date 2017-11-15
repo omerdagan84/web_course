@@ -67,7 +67,7 @@ height:90%;
 		"about about about about"
         "left projects projects projects"
 		"left exthtml exthtml exthtml";
-	grid-template-rows: 150px 15% 1fr 1fr;
+	grid-template-rows: 150px 15% 18% 1fr;
         color: #444;
 }
 .elem{
@@ -110,7 +110,29 @@ nav a[href]:hover{
 text-decoration:underline;
 color:black;
 }
+#projects h3 {
+	text-align:center;
+}
+#projects ul {
+}
+#projects  li {
+float:left;
+padding-right:5px;
+display:inline-block;
 
+}
+#projects  a[href]:visited {
+text-decoration:none;
+color:black;
+}
+#projects  a[href]:link{
+text-decoration:none;
+color:black;
+}
+#projects  a[href]:hover{
+text-decoration:underline;
+color:black;
+}
 hgroup {
 width:50%;
 float:left;
