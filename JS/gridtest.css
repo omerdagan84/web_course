@@ -21,8 +21,17 @@ display: block;
 #leftbox {
 	grid-area:left;
 	background-color:#8ee4af;
-	grid-row: 3;
 	
+	
+}
+#exthtml {
+	grid-area:exthtml;
+	background-color:#8ee4af;
+	grid-row: 4;
+	
+}
+iframe[seamless] {
+    border: none;
 }
 /*
 #leftbox {
@@ -56,8 +65,9 @@ height:90%;
     grid-template-areas:
 		"top top top top"
 		"about about about about"
-        "left projects projects projects";
-	grid-template-rows: 150px 15% 1fr;
+        "left projects projects projects"
+		"left exthtml exthtml exthtml";
+	grid-template-rows: 150px 15% 1fr 1fr;
         color: #444;
 }
 .elem{
