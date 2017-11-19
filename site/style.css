@@ -1,0 +1,318 @@
+html {
+height:100vh;
+background-color: #05386b;
+}
+body {
+display: block;
+  height:100%;
+  overflow-y:hidden;
+}
+
+#topbar {
+	grid-area:top;
+	background-color:#379683;
+	grid-row: 1;
+	color: #edf5e1;
+}
+#about {
+	grid-area:about;
+	background-color:#8ee4af;
+	grid-row: 2;
+}
+#leftbox {
+	grid-area:left;
+	background-color:#8ee4af;
+	
+	
+}
+#exthtml {
+	grid-area:exthtml;
+	background-color:#8ee4af;
+	grid-row: 4;
+	
+}
+iframe[seamless] {
+    border: none;
+	width:100%;
+	height:100%;
+}
+
+#projects {
+grid-area:projects;
+background-color:#edf5e1;
+grid-row: 3;
+}
+
+
+#wrapper {
+height:90%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-areas:
+		"top top top top"
+		"about about about about"
+        "left projects projects projects"
+		"left exthtml exthtml exthtml";
+	grid-template-rows: 150px 15% 10% 1fr;
+        color: #444;
+}
+.elem{
+padding-left:5px;
+border-radius:20px;
+overflow:hidden;
+min-width:150px;
+}
+#profile_pic {
+height:150px;
+float:left;
+margin-left:0;
+display:inline;
+}
+nav {
+width:20%;
+float:right;
+height:100%;
+display:inline-block;
+margin-right:auto;
+min-width:170px;
+overflow:hidden;
+}
+nav ul {
+list-style-type:none;
+}
+nav li {
+float:left;
+margin-right:5px;
+}
+nav a[href]:visited {
+text-decoration:none;
+color:#edf5e1;
+}
+nav a[href]:link{
+text-decoration:none;
+color:#edf5e1;
+}
+nav a[href]:hover{
+text-decoration:underline;
+color:black;
+}
+#projects h3 {
+	text-align:center;
+}
+#projects ul {
+}
+#projects  li {
+float:left;
+padding-right:10px;
+display:inline-block;
+
+}
+#projects  a[href]:visited {
+text-decoration:none;
+color:black;
+}
+#projects  a[href]:link{
+text-decoration:none;
+color:black;
+}
+#projects  a[href]:hover{
+text-decoration:underline;
+color:black;
+}
+hgroup {
+width:50%;
+float:left;
+line-height:1em;
+height:100%;
+overflow:hidden;
+display:inline;
+min-width:280px;
+}	
+hgroup h1 {
+padding-left:5%;
+}
+hgroup h2 {
+text-transform:uppercase;
+font-size:80%;
+padding-left:8%;
+}
+#about h3{
+text-transform:uppercase;
+padding:0;
+margin-bottom:2px;
+margin-top:0;
+overflow:hidden;
+}
+/*
+
+header {
+width:80%;
+background-color:black;
+color:white;
+margin-right:auto;
+margin-left:auto;
+padding:10px;
+overflow:hidden;
+}
+section {
+width:80%;
+background-color:white;
+margin-right:auto;
+margin-left:auto;
+border-color:black;
+border-style:solid;
+border-width:5px;
+padding:5px;
+}
+p {
+margin:10px;
+}
+img {
+float:right;
+margin:0px 0px 10px 10px;
+box-shadow:3px 3px 5px 1px #cccccc;
+}
+footer {
+width:80%;
+background-color:black;
+color:white;
+margin-right:auto;
+margin-left:auto;
+height:50px;
+padding:10px;
+}
+
+h1 {
+font-size:2em;
+margin:0;
+padding:0;
+padding-top:10px;
+}
+h2 {
+font-size:1.6em;
+}
+h3 {
+font-size:1.3em;
+}
+
+
+
+hgroup h1 {
+padding-top:0;
+line-height:1em;
+}
+hgroup h2 {
+
+font-size:1.2em;
+line-height:1em;
+
+}
+
+
+aside {
+width:80%;
+margin-right:auto;
+margin-left:auto;
+font-size:.8em;
+background:#eeff99;
+padding:20px;
+border:1px solid #696;
+border-radius:20px;
+}
+
+
+#topbar{
+height:15%;
+background-color:#b1b7b7;
+margin:0;
+padding:0;
+width:auto;
+display:block;
+min-height:100px;
+}
+*/
+
+/*
+#content_box {
+min-width:640px;
+overflow:none;
+}
+#about {
+height:15%;
+background-color:#cdc7bb;
+color:#565656;
+border-radius:10px;
+overflow:hidden;
+}
+html {
+height:85%;
+}
+body {
+	font-family:Arial,Helvettica,sans-serif;
+	background-color:#565656;
+	height:90%;
+}
+header {
+height:15%;
+padding:0;
+width:100%;
+
+}
+*/
+
+
+
+/*
+hr {
+clear:both;
+visibility:hidden;
+margin:0;
+border:0;
+}
+.elem {
+margin:0;
+padding:5px;
+}
+*/
+
+
+/*
+#main {
+height:100%;
+background-color:#787a79;
+border-radius:10px;
+position:relative;
+}
+
+
+
+
+#projects {
+width:77%;
+height:78%;
+background-color:#e2e3de;
+float:right;
+display:inline-block;
+color:#565656;
+margin:0.5%;
+border-width:3px;
+border-color:#565656;
+border-style:solid;
+border-radius:20px;
+min-width:570px;
+max-height:inherit;
+position:absolute;
+margin-right:17%;
+}
+#content_box:after {
+clear:both;
+}
+
+p{
+line-height:1em;
+}
+#about p{
+margin:0;
+}
+*/
