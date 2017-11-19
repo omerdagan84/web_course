@@ -33,8 +33,9 @@ display: block;
 }
 iframe[seamless] {
     border: none;
-	width:100%;
+	width:99.5%;
 	height:100%;
+	margin-right:14px;
 }
 
 #projects {
