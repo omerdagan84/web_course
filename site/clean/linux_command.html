@@ -51,6 +51,8 @@
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Simple Line Icons -->
 	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
 	<!-- Theme Style -->
 	<link rel="stylesheet" href="css/style.css">
 	<!-- Modernizr JS -->
@@ -59,7 +61,7 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	<style body text-align=left></style>
 	</head>
 	<body>
 		
@@ -71,11 +73,11 @@
 						<div class="navbar-header"> 
 						<!-- Mobile Toggle Menu Button -->
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle visible-xs-block" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-						<a class="navbar-brand" href="index.html">Omer Dagan - Blog</a>
+						<a class="navbar-brand" href="index.html">Clean</a>
 						</div>
 						<div id="fh5co-navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
-								<li class="active"><a href="index.html"><span>Home <span class="border"></span></span></a></li>
+								<li><a href="index.html"><span>Home <span class="border"></span></span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -87,69 +89,89 @@
 	
 	
 	<div id="fh5co-main">
-		<div class="fh5co-intro text-center">
+		<div class="fh5co-intro text-left">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
-						<h1 class="intro-lead">Omer Dagan</h1>
-						<p class="">personal site - my interests and stuff</p>
+						<h1 class="intro-lead">Linux Commandline Tips & Tricks</h1>
+						<p class="">the linux commandline the most efficient wat to work with linux - mastering this feature will speed-up the work segnificantly. I will attemt to record some of the methods I use in my day to day work</p>
+						<p>
+						<h2>command return value</h2>
+						each command has a return value. the command value in the code can usually be by the 'exit <value>' command.<br>
+						a command succesecc will return '0' value and a failuer will return '1' or any non-zero value depending on the running software<br>
+						one can check the return value by the system variable '?' - by echoing the variable with 'echo $?' one can see the return value of the last command run<br>
+						for example:
+				
+						<code>
+						test@test:~ $ ps<br>
+						PID TTY          TIME CMD<br>
+						20748 pts/34   00:00:00 bash<br>
+						20846 pts/34   00:00:00 ps<br>
+						test@test:~ $:~ $ ps | grep bush<br>
+						test@test:~ $:~ $ echo $?<br>
+						1<br>
+						test@test:~ $:~ $ ps | grep bash <br>
+						20748 pts/34   00:00:00 bash<br>
+						test@test:~ $:~ $ echo $?<br>
+						0<br>
+						</code>
+
+						as seen in the example if 'grep' was able to find a match it will return '0', if not it will return '1'
+						</p>
+						
+						<p>
+						<h2>command concatinaion</h2>
+						<code>COMMAND && COMMAND_TRUE || COMMAND_FALSE</code>
+						for example lets assume one wishes to test if a certain process exists
+						<code>
+						pidof crond > /dev/null && echo "process is running" || echo "process is not running";
+						</code>
+						let's assume that the prcess is indeed running the output will be:
+						<code>$ process is running</code>
+						a bit of explanations:
+						<li>
+						<ul> <b>pidof</b> - a simple comand that displays the pid (process ID) of the procecess if it exists <br> but we are not iterested in the command out put but its return value</ul>
+						<ul> <b>crond</b> - a cron deamon - a process that usually runs by default and enables one to schedual jobs in many different time defenitions "see crond - linux job schedualer" </ul>
+						</li>
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="fh5co-portfolio">
-			<div class="fh5co-portfolio-item ">
-				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/home_aut.jpg);"></div>
-				<div class="fh5co-portfolio-description">
-					<h2>Home Automation</h2>
-					<p>I want to do an home automation project. I intend to create the entire eco-system for this project, so this project page aims to record my ideas and hopefully in the long run the sum of knowledge that I have gained.</p>
-					<p><a href="home_aut.html" class="btn btn-primary">Home automation</a></p>
-				</div>
-			</div>
-			<div class="fh5co-portfolio-item fh5co-img-right">
-				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/linux.jfif);"></div>
-				<div class="fh5co-portfolio-description">
-					<h2>Linux Tips and tricks</h2>
-					<p>a page for stuff i collect during my work</p>
-					<p><a href="linux_tips.html" class="btn btn-primary">Check it!</a></p>
-				</div>
-			</div>
-			<div class="fh5co-portfolio-item ">
-				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/linux_command.png);"></div>
-				<div class="fh5co-portfolio-description">
-					<h2>Linux command line</h2>
-					<p>some tips to work more efficiently with the linux command line. </p>
-					<p><a href="linux_command.html" class="btn btn-primary">work smarter!</a></p>
-				</div>
-			</div>
-		</div>
-
-		<div id="fh5co-team">
+		<div id="fh5co-content">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="row">
-							<h2 class="section-lead text-center">About me</h2>
-							<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 fh5co-staff to-animate">
-								<h3>Omer Dagan</h3>
-								<p>Embedded SW engineer</p>
-								<ul class="fh5co-social">
-									<li><a href="#"><i class="icon-twitter"></i></a></li>
-									<li><a href="#"><i class="icon-github"></i></a></li>
-								</ul> 	
+							<div class="col-md-3 animate-box">
+								<h3>Description</h3>
+								<p>a small record of Linux related stuff i collect during my work</p>
+								<ul class="fh5co-list-check">
+									<li>Description</li>
+									<li>elements</li>
+									<li>implementation</li>
+									<li>links</li>
+								</ul>
+							</div>
+							<div class="col-md-9">
+								<p class="animate-box">description</p>
+								<p class="animate-box">elements</p>
+								<p class="animate-box">implementation</p>
+								<p class="animate-box">links</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+
+
 
 	<footer id="fh5co-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-10 col-md-offset-1 text-center">
+				<div class="col-md-10 col-md-offset-1 text-left">
 					<p>Omer Dagan 2017</p>
 				</div>
 			</div>
@@ -165,6 +187,8 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
 
