@@ -38,9 +38,6 @@
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-
 	<!-- Google Webfonts -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,500' rel='stylesheet' type='text/css'>
@@ -73,7 +70,7 @@
 						<div class="navbar-header"> 
 						<!-- Mobile Toggle Menu Button -->
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle visible-xs-block" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-						<a class="navbar-brand" href="index.html">Clean</a>
+						<a class="navbar-brand" href="index.html">Dagan's</a>
 						</div>
 						<div id="fh5co-navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
@@ -94,11 +91,28 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
 						<h1 class="intro-lead">Linux Commandline Tips & Tricks</h1>
-						<p class="">the linux commandline the most efficient wat to work with linux - mastering this feature will speed-up the work segnificantly. I will attemt to record some of the methods I use in my day to day work</p>
+						<p class="">the linux commandline the most efficient way to work with Linux - mastering this feature will speed-up the work significantly. I will attempt to record some of the methods I use in my day to day work.<br>
+						first one should mention the <b> man</b> command
+						<code>
+						$ man grep<br>
+						GREP(1)                     General Commands Manual                    GREP(1)<br>
+<br>
+<br>
+<br>
+						NAME<br>
+						grep, egrep, fgrep, rgrep - print lines matching a pattern<br>
+<br>
+						SYNOPSIS<br>
+						grep [OPTIONS] PATTERN [FILE...]<br>
+						grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]<br>
+						...<br>
+						</code>
+						the man (manual) command allows one to see all the configurators for a specific command, and it is by far the most helpful tool for any beginner
+						</p>
 						<p>
 						<h2>command return value</h2>
 						each command has a return value. the command value in the code can usually be by the 'exit <value>' command.<br>
-						a command succesecc will return '0' value and a failuer will return '1' or any non-zero value depending on the running software<br>
+						a command success will return '0' value and a failure will return '1' or any non-zero value depending on the running software<br>
 						one can check the return value by the system variable '?' - by echoing the variable with 'echo $?' one can see the return value of the last command run<br>
 						for example:
 				
@@ -120,52 +134,59 @@
 						</p>
 						
 						<p>
-						<h2>command concatinaion</h2>
+						<h2>command concatenation</h2>
 						<code>COMMAND && COMMAND_TRUE || COMMAND_FALSE</code>
 						for example lets assume one wishes to test if a certain process exists
 						<code>
 						pidof crond > /dev/null && echo "process is running" || echo "process is not running";
 						</code>
-						let's assume that the prcess is indeed running the output will be:
+						let's assume that the process is indeed running the output will be:
 						<code>$ process is running</code>
 						a bit of explanations:
-						<li>
-						<ul> <b>pidof</b> - a simple comand that displays the pid (process ID) of the procecess if it exists <br> but we are not iterested in the command out put but its return value</ul>
-						<ul> <b>crond</b> - a cron deamon - a process that usually runs by default and enables one to schedual jobs in many different time defenitions "see crond - linux job schedualer" </ul>
-						</li>
+						<ul>
+						<li> <b>pidof</b> - a simple command that displays the pid (process ID) of the processes if it exists <br> but we are not interested in the command out put but its return value</li>
+						<li> <b>crond</b> - a cron daemon - a process that usually runs by default and enables one to schedule jobs in many different time definitions "see crond - Linux job scheduler" </li>
+						<li><b>> /dev/null</b> - since we do not care about the output just the return value we just forward all the output to the 'null' device</li>
+						
+						<li> <b>&&</b> - execute command upon return code '0' - which means the following command will be performed upon success</li>
+						<li> <b>||</b> - execute command upon return code other than '0' - which means the following command will be performed upon fail</li>
+						</ul>
+						</p>
+						<p> 
+						<h2>text file show</h2>
+						<h3>the <b>cat</b> command</h3>
+						<code>
+							cat FILENAME
+						</code>
+						the simplest of commands - just displays the file content in ascii representation<br>
+						NOTE: one shouldn't 'cat' a binary file - since the ascii representation of that file will be incomprehensible 
+						<code> cat -n FILENAME </code>
+						will add the line numbers to the print - very useful when combining with other commands
+						</p>
+						<p>
+						<h3> the <b>tail</b> command</h3>
+						tails the file - same as cat but will print the end of the file
+						<code>
+						tail FILENAME #will print the last 10(default) lines of the file<br>
+						tail -n NUM FILENAME #will print the last NUM lines of the file<br>
+						tail -f FILENAME #will print the end of the file but will keep on following as it grows
+						</code>
+						the command is especially useful when trying to see changes to a large file, such as logs.<br>
+						or when trying to review a changing file ('-f' option)
+						</p>
+						<p>
+						<h3> the <b>head</b> command</h3>
+						shows the head of the file - same as tail. lines shown by default is 10.
+						<code>
+						head FILENAME #will show the first 10 lines of the file<br>
+						head -n NUM FILENAME # will show the first NUM lines of the file
+						
+						</code>
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<div id="fh5co-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="row">
-							<div class="col-md-3 animate-box">
-								<h3>Description</h3>
-								<p>a small record of Linux related stuff i collect during my work</p>
-								<ul class="fh5co-list-check">
-									<li>Description</li>
-									<li>elements</li>
-									<li>implementation</li>
-									<li>links</li>
-								</ul>
-							</div>
-							<div class="col-md-9">
-								<p class="animate-box">description</p>
-								<p class="animate-box">elements</p>
-								<p class="animate-box">implementation</p>
-								<p class="animate-box">links</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 
 
 	<footer id="fh5co-footer">
