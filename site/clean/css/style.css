@@ -126,7 +126,9 @@ hr {
 }
 
 pre {
-  overflow: auto;
+  overflow: none;
+  text-align:left;
+  font-family: monospace, monospace;
 }
 
 code,
@@ -1883,7 +1885,6 @@ address {
 
 code,
 kbd,
-pre,
 samp {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
@@ -1920,6 +1921,7 @@ pre {
   display: block;
   word-break: break-all;
   word-wrap: break-word;
+  line-height:1em;
 }
 pre code {
   padding: 0;

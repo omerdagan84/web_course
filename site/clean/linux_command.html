@@ -186,10 +186,130 @@
 						<p>
 						<h2>the <b>grep</b> command </h2>
 						okay, this is an amazing tool one of the most useful tools in a Linux developer toolset<br>
-						there is absolutly no wat to cover all the capabilities of this command, but I will try and show some useful options to use it,<br>
-						I will try and cover regex at a different post but one should know that when combined with the grep command the ability to parse text is increased tenfold<br> as always i recommand going through the manual and learn of this commands abilities in detailes
+						there is absolutely no way to cover all the capabilities of this command, but I will try and show some useful options to use it,<br>
+						I will try and cover regex at a different post but one should know that when combined with the grep command the ability to parse text is increased tenfold<br> as always I recommend going through the manual and learn of this commands abilities in details
+						<p>
 						<h3>search within files</h3>
 						lets assume one wishes to search source code library for a variable
+						<code>
+						grep -rn STRING LOCATION<br>
+						grep -rnv STRING LOCATION<br>
+						</code>
+						<ul>
+						<li><b>-r</b> - search recursively within the specified LOCATION</li>
+						<li><b>-n</b> - show line numbers in the output</li>
+						<li><b>-v</b> - show only lines <b>NOT</b> matching the pattern string</li>
+						<li><b>STRING</b> - the STRING to be searched</li> 
+						<li><b>LOCATION</b> - the LOCATION or path to be searched</li>
+						</ul>
+						</p>
+						<p>
+						<h3> using regular expressions </h3>
+						I'll try and cover regular expressions in a diffrent post, but if one wishes to use them 
+						<code>
+						$ cat file.txt<br>
+						var t = setInterval(move, 50); <br>
+						// starting position<br>
+						var pos = 0; <br>
+						var dir = 1;<br>
+						//our box element<br>
+						var box = document.getElementById("box");<br>
+						var boxtext = document.getElementById("boxtext");<br>
+						<br>
+						function move() {<br>
+							if (pos >= 150 ) {<br>
+								dir = -1;<br>
+								boxtext.innerHTML = "left";<br>
+							} else if (pos < 0) {<br>
+								dir = 1;<br>
+								boxtext.innerHTML = "right";<br>
+							}<br>
+						<br>
+						<br>
+							pos += dir;<br>
+							box.style.left = pos+"px"; //px = pixels<br>
+						}<br>
+						$ grep -nE "box*" file.txt<br>
+						6://our box element<br>
+						7:var box = document.getElementById("box");<br>
+						8:var boxtext = document.getElementById("boxtext");<br>
+						13:		boxtext.innerHTML = "left";<br>
+						16:		boxtext.innerHTML = "right";<br>
+						21:	box.style.left = pos+"px"; //px = pixels<br>
+						</code>
+						one can see that the search string matches anything containing the word 'box' regardless of the next characters,
+						this example is useless since the grepping for box would have produced the same output, but regular expressions can be much more detailed and 
+						can include very complicated search strings
+						</p>
+						<p>
+						<h3>searching for files</h3>
+						<code>
+						$ ls -d -1 $PWD/*.* | grep animation<br>
+						/home/dagan/solo_js/animation.html<br>
+						/home/dagan/solo_js/animation.js<br>
+						</code>
+						<ul>
+						<li><b>ls</b> - list files</li>
+						<li><b>-d</b> - list the directories themselves</li>
+						<li><b>-1</b> - list one file per line</li>
+						<li><b>$PWD/*.*</b> - list all files with their respective full path</li>
+						<li><b>|</b> - move command output to the following command</li>
+						<li><b>grep STRING</b> - grep the files matching the STRING</li>
+						</ul>
+						this allows you to search the current directory files for a matching STRING(file name)<br>
+						NOTE: one can extend or modify the 'ls' command for more complicated paths - or use 'find'
+						</p>
+						<p>
+						<h2> the <b>awk</b> command </h2>
+						the awk command is a pattern scanning tool, it implements of the AWK programming language and is a very useful tool for processing<br>
+						though since it is essentially a programming language it is very complicated and extensive knowledge is needed to get the full benefits from it
+						the following example is something I encountered during my work and it shows the power of the command I achieving something that seems quite complicated at first<br><br>
+						the exapmles calculates the actual free RAM space in a system, to achieve this one should sum the MemFree and the Cached lines in the Linux meminfo file
+						<code>
+						cat /proc/meminfo | grep -E 'MemFree|^Cached' | awk '{sum += $2} END {print sum}'
+						</code>
+						<ul>
+						<li><b>cat /proc/meminfo</b> - show the content of the meminfo file</li>
+						<li><b>|</b> - move output to the following command</li>
+						<li><b>grep -E 'MemFree|^Cached'</b> - use grep with RegEx and get only the MemFree line and the line beginning(<b>'^'</b>) with Cached</li>
+						<li><b>| awk</b> - parse the output of the grep command with awk</li>
+						<li><b>'{sum += $2} END</b> - add the content of the second(<b>$2</b>) column in the output line to sum for each line</li>
+						<li><b>{print sum}'</b> - print the value calculated after parsing all the lines</li>
+						</ul>
+						</p>
+						<p>
+						<h2>process management</h2>
+						<p>
+						<h3>the <b>ps</b> command </h3>
+						<code>
+						ps aux<br>
+						ps aux | cat<br>
+						ps<br>
+						</code>
+						<ul>
+						<li><b>ps</b> - show all processes attached to users ID and attached to the controlling terminal on embedded systems which usually supports a single root terminal this command is enough to show all processes</li>
+						<li><b>ps aux</b> - show all processes attached to user 'x' which is a wild-card for all users. on some systems one should type <b>ps -aux</b></li>
+						<li><b>ps aux | cat</b> - a TIP when running on embedded systems with restricted terminal. sometimes command output is cut after 84charecters - this trick allows one to bypass this restriction</li>
+						</ul>
+						</p>
+						<p>
+						<h3> the <b>pidof</b> command </h3>
+						<code>
+						pidof COMMAND_NAME
+						</code>
+						shows the PID of the COMMAND_NAME if it exists (return value '0') or nothing if it doesn't (return value '1')
+						</p>
+						<p>
+						<h3> the <b>kill</b> commands </h3>
+						<code>
+						kill PID<br>
+						killall COMMAND_NAME <br>
+						</code>
+						<ul>
+						<li><b>kill PID</b> - kill a specific PID</li>
+						<li><b>killall COMMAND_NAME</b> - kill all instances of a certain program</li>
+						</ul>
+						</p>
 						</p>
 					</div>
 				</div>

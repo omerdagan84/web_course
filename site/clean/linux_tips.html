@@ -7,7 +7,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Clean &mdash; A free HTML5 Template by FREEHTML5.CO</title>
+	<title>Dagan's &mdash; Linux commandline scripts</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -38,9 +38,6 @@
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-
 	<!-- Google Webfonts -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,500' rel='stylesheet' type='text/css'>
@@ -51,8 +48,6 @@
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Simple Line Icons -->
 	<link rel="stylesheet" href="css/simple-line-icons.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
 	<!-- Theme Style -->
 	<link rel="stylesheet" href="css/style.css">
 	<!-- Modernizr JS -->
@@ -73,7 +68,7 @@
 						<div class="navbar-header"> 
 						<!-- Mobile Toggle Menu Button -->
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle visible-xs-block" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-						<a class="navbar-brand" href="index.html">Clean</a>
+						<a class="navbar-brand" href="index.html">Dagan's</a>
 						</div>
 						<div id="fh5co-navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
@@ -87,48 +82,67 @@
 	</header>
 	<!-- END .header -->
 	
-	
 	<div id="fh5co-main">
-		<div class="fh5co-intro text-center">
+		<div class="fh5co-intro text-left">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
-						<h1 class="intro-lead">Linux Tips & Tricks</h1>
-						<p class="">project page</p>
+					<h1 class="intro-lead">Linux Tips & Tricks</h1>
+					<p class="">Okay, so i though about it - and the result i came to is that I use a lot of scripts in my day-to-day.<br>
+					basically i don't like typing - so the best thing about Linux is the fact that everything you need to do you can use a script.<br>
+					So, I'll just collect scripts I use - no need to use them as is, but hopefully you can get ideas for your own scripts
+					</p>
+					
+					<p>
+						<h2>parsing and validating IP addresses</h2>
+						<code>
+						<pre>
+#!/bin/bash
+function valid_ip()
+{
+	local  ip=$1
+	local  stat=1
+
+	if [[ $ip =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
+		OIFS=$IFS
+		IFS='.'
+		ip=($ip)
+		IFS=$OIFS
+		[[ ${ip[0]} -le 255 && ${ip[1]} -le 255 \
+			&& ${ip[2]} -le 255 && ${ip[3]} -le 255 ]]
+		stat=$?
+	fi
+	return $stat
+}
+
+if [ -z $1 ]; then 
+	echo " no IP given as parameter - reverting to default"
+	IP=172.0.0.0
+else
+	IP=$1
+fi
+if valid_ip $IP; then 
+	echo "entered IP is valid"
+else
+	echo "entered IP is invalid"
+	exit
+fi
+
+echo "at this point you can add your commands using IP variable"
+						</pre>
+						</code>
+						I usually use many scripts to work with my embedded devices - mainly using <b>ssh</b> and <b>scp</b> commands<br>
+						since these use IP addresses I use this script template. It accepts the IP in the first parameter and validates that it is in the IPv4 format
+						i.e. [0-255].[0-255].[0-255].[0-255]<br>
+						It also contains a default IP to use if none is given.
+					</p>
+					
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<div id="fh5co-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="row">
-							<div class="col-md-3 animate-box">
-								<h3>Description</h3>
-								<p>a small record of Linux related stuff i collect during my work</p>
-								<ul class="fh5co-list-check">
-									<li>Description</li>
-									<li>elements</li>
-									<li>implementation</li>
-									<li>links</li>
-								</ul>
-							</div>
-							<div class="col-md-9">
-								<p class="animate-box">description</p>
-								<p class="animate-box">elements</p>
-								<p class="animate-box">implementation</p>
-								<p class="animate-box">links</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
+	</div>
+	
 	<footer id="fh5co-footer">
 		<div class="container">
 			<div class="row">
@@ -148,8 +162,6 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
 
