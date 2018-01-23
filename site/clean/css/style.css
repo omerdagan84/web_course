@@ -7463,7 +7463,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 4em;
   padding-top: 2em;
   padding-bottom: 2em;
-  background: #fafafa;
+  background: #fff;
   float: left;
   width: 100%;
 }
@@ -7586,7 +7586,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #e32929;
 }
 #fh5co-team .fh5co-staff .fh5co-social a {
-  color: #ccc;
+  color: black;
 }
 #fh5co-team .fh5co-staff .fh5co-social a:hover {
   color: #000;
