@@ -89,9 +89,23 @@
 		<div class="fh5co-intro text-left">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
+									<div class="col-md-3 animate-box">
+						<h3>Description</h3>
+						<p>this page describes some basic linux commands with the most basic usage, these are commands which I view as essential for any Linux user.</p>
+						<ul class="fh5co-list-check">
+							<li><a href="#man">the <b>man</b> command</a></li>
+							<li><a href="#return">command return values</a></li>
+							<li><a href="#concat">command concatenation</a></li>
+							<li><a href="#textview">text file show</a></li>
+							<li><a href="#grep">the <b>grep</b> command</a></li>
+							<li><a href="#awk">the <b>awk</b> command</a></li>
+							<li><a href="#proc">process management</a></li>
+							
+						</ul>
+					</div>
+					<div class="col-md-8 col-md-offset-3">
 						<h1 class="intro-lead">Linux Commandline Tips & Tricks</h1>
-						<p class="">the linux commandline the most efficient way to work with Linux - mastering this feature will speed-up the work significantly. I will attempt to record some of the methods I use in my day to day work.<br>
+						<p class="" id="man">the linux commandline the most efficient way to work with Linux - mastering this feature will speed-up the work significantly. I will attempt to record some of the methods I use in my day to day work.<br>
 						first one should mention the <b> man</b> command
 						<code>
 						$ man grep<br>
@@ -109,7 +123,7 @@
 						</code>
 						the man (manual) command allows one to see all the configurators for a specific command, and it is by far the most helpful tool for any beginner
 						</p>
-						<p>
+						<p id="return">
 						<h2>command return value</h2>
 						each command has a return value. the command value in the code can usually be by the 'exit <value>' command.<br>
 						a command success will return '0' value and a failure will return '1' or any non-zero value depending on the running software<br>
@@ -133,7 +147,7 @@
 						as seen in the example if 'grep' was able to find a match it will return '0', if not it will return '1'
 						</p>
 						
-						<p>
+						<p id="concat">
 						<h2>command concatenation</h2>
 						<code>COMMAND && COMMAND_TRUE || COMMAND_FALSE</code>
 						for example lets assume one wishes to test if a certain process exists
@@ -152,7 +166,7 @@
 						<li> <b>||</b> - execute command upon return code other than '0' - which means the following command will be performed upon fail</li>
 						</ul>
 						</p>
-						<p> 
+						<p id="textview"> 
 						<h2>text file show</h2>
 						<h3>the <b>cat</b> command</h3>
 						<code>
@@ -183,7 +197,7 @@
 						
 						</code>
 						</p>
-						<p>
+						<p id="grep">
 						<h2>the <b>grep</b> command </h2>
 						okay, this is an amazing tool one of the most useful tools in a Linux developer toolset<br>
 						there is absolutely no way to cover all the capabilities of this command, but I will try and show some useful options to use it,<br>
@@ -259,7 +273,7 @@
 						this allows you to search the current directory files for a matching STRING(file name)<br>
 						NOTE: one can extend or modify the 'ls' command for more complicated paths - or use 'find'
 						</p>
-						<p>
+						<p id="awk">
 						<h2> the <b>awk</b> command </h2>
 						the awk command is a pattern scanning tool, it implements of the AWK programming language and is a very useful tool for processing<br>
 						though since it is essentially a programming language it is very complicated and extensive knowledge is needed to get the full benefits from it
@@ -277,7 +291,7 @@
 						<li><b>{print sum}'</b> - print the value calculated after parsing all the lines</li>
 						</ul>
 						</p>
-						<p>
+						<p id="proc">
 						<h2>process management</h2>
 						<p>
 						<h3>the <b>ps</b> command </h3>
