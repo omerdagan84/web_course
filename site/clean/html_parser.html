@@ -7,7 +7,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Dagan's &mdash; a blog site</title>
+	<title>Dagan's &mdash; a super simple HTML parser</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -68,11 +68,11 @@
 						<div class="navbar-header"> 
 						<!-- Mobile Toggle Menu Button -->
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle visible-xs-block" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-						<a class="navbar-brand" href="index.html">Omer Dagan - Blog</a>
+						<a class="navbar-brand" href="index.html">Dagan's</a>
 						</div>
 						<div id="fh5co-navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
-								<li class="active"><a href="index.html"><span>Home <span class="border"></span></span></a></li>
+								<li><a href="index.html"><span>Home <span class="border"></span></span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -82,78 +82,75 @@
 	</header>
 	<!-- END .header -->
 	
-	
 	<div id="fh5co-main">
-		<div class="fh5co-intro text-center">
+	
+		<div class="fh5co-intro text-left">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						<h1 class="intro-lead">Omer Dagan</h1>
-						<p class="">personal site - my interests and stuff</p>
+				
+						
+					<div class="col-md-3 animate-box">
+						<h3>Description</h3>
+						<p>this page documents my work on a simple script that allows me to write the HTML code for this site easily</p>
+						<ul class="fh5co-list-check">
+							<li><a href="#parsing">Parsing IP address</a></li>
+						</ul>
+					</div>
+						
+					
+					<div class="col-md-8 col-md-offset-3">
+					<h1 class="intro-lead">Simple HTML parser</h1>
+					<h2> Intro</h2>
+						<p>
+							well, since I started working on this page, I noticed that writing HTML tags pisses me off<br>
+							It's annoying. Since I don't like to be annoyed I figured I will write a small script to ease writing HTML code.<br>
+						</p>
+						
+						<p>
+							obviously, I am not going to write a huge program to actually handle the entire language restrictions. there are enough IDE to handle writing and managing HTML code.<br>
+							No, I just want to be able to write the textual parts of the page easily, so I don't need to hang on writing all the tags when writing.<br>
+						</p>
+					<h2> the script</h2>
+						<p>
+							<h3> definitions</h3>
+							As a starting point I decided to support easy writing of just a few textual tags<br>
+							i.e. p, h1, h2, h3, ul and li.<br>
+							The idea is being able to write naturally as possible and letting the script parse the text file and create the needed tags<br>
+							I decided on the most easy to implement method, a simple line based parsing where each line will be:<br>
+							PARAM text content<br>
+							where PARAM is<br>
+							<ul>
+								<li> p - a start paragraph definition</li>
+								<li> h1 - a header-1 definition</li>
+								<li> h2 - a header-2 definition</li>
+								<li> h3 - a header-3 definition</li>
+								<li> ul - an unordered list definition</li>
+								<li> li - a list item</li>
+							</ul>
+						</p>
+					
+						<p>
+							<h3> design restrictions</h3>
+							the script should be able to support multi-line paragraphs<br>
+							the writing should remain as natural as possible<br>
+						</p>
+						<p>
+							<h3> the script</h3>
+							the script is based on <b>read</b> and a simple string <b>case</b><br>
+						</p>
+						<p>
+							<h3> GitHub link</h3>
+							<a href="https://github.com/omerdagan84/html_parse" target="_blank"><i class="icon-github"></i> GitHub</a>
+						</p>
+						<p>
+							<h3> the code explained</h3>
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-<div id="fh5co-team">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="row" style="background-color:#ddd">
-							<h2 class="section-lead text-center">About</h2>
-							<div class="col-md-6 col-sm-6 col-xs-6 col-xxs-12 fh5co-staff to-animate">
-								<h3>Omer Dagan</h3>
-								<p>Embedded SW engineer. I work mainly in Linux. <br>
-								In my-day-to-day I usually write embedded SW 
-								</p>
-								<ul class="fh5co-social" style="color:black">
-									<li><a href="https://www.facebook.com/profile.php?id=680800098" target="_blank"><i class="icon-facebook"></i> Facebook</a></li>
-									<li><a href="https://www.linkedin.com/in/omer-dagan-101a2965" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a></li>
-									<li><a href="https://github.com/omerdagan84/" target="_blank"><i class="icon-github"></i> GitHub</a></li>
-								</ul> 	
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="fh5co-portfolio">
-		<div class="fh5co-portfolio-item fh5co-img-right">
-				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/html_flat.png); background-overflow: visible;"></div>
-				<div class="fh5co-portfolio-description">
-					<h2>Simple HTML parser</h2>
-					<p>a Simple script to ease writing HTML pages. something I wroth to use while working on this site</p>
-					<p><a href="html_parser.html" class="btn btn-primary">More...</a></p>
-				</div>
-			</div>
-			<div class="fh5co-portfolio-item ">
-				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/home_aut.jpg);background-overflow: visible;"></div>
-				<div class="fh5co-portfolio-description">
-					<h2>Home Automation</h2>
-					<p>I want to do an home automation project. I intend to create the entire eco-system for this project, so this project page aims to record my ideas and hopefully in the long run the sum of knowledge that I have gained.</p>
-					<p><a href="home_aut.html" class="btn btn-primary">Home automation</a></p>
-				</div>
-			</div>
-			<div class="fh5co-portfolio-item fh5co-img-right">
-				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/linux.jfif); background-overflow: visible;"></div>
-				<div class="fh5co-portfolio-description">
-					<h2>Linux Tips and tricks</h2>
-					<p>a page for stuff i collect during my work</p>
-					<p><a href="linux_tips.html" class="btn btn-primary">Check it!</a></p>
-				</div>
-			</div>
-			<div class="fh5co-portfolio-item ">
-				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/linux_command.png);background-overflow: visible;"></div>
-				<div class="fh5co-portfolio-description">
-					<h2>Linux command line</h2>
-					<p>some tips to work more efficiently with the linux command line. </p>
-					<p><a href="linux_command.html" class="btn btn-primary">work smarter!</a></p>
-				</div>
-			</div>
-		</div>
-
-		
 	</div>
-
+	
 	<footer id="fh5co-footer">
 		<div class="container">
 			<div class="row">
