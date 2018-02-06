@@ -512,6 +512,9 @@
 .icon-feather:before {
 	content: "\e6a2";
 }
+.icon-stackoverflow:before {
+	content: url(../images/stackoverflow.svg);
+}
 .icon-flag:before {
 	content: "\e6a3";
 }
