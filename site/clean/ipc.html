@@ -7,7 +7,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Clean &mdash; A free HTML5 Template by FREEHTML5.CO</title>
+	<title>Dagan's &mdash; an example to using Linux signals IPC</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -38,12 +38,9 @@
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-
 	<!-- Google Webfonts -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,500' rel='stylesheet' type='text/css'>
 	
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -51,8 +48,6 @@
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Simple Line Icons -->
 	<link rel="stylesheet" href="css/simple-line-icons.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
 	<!-- Theme Style -->
 	<link rel="stylesheet" href="css/style.css">
 	<!-- Modernizr JS -->
@@ -73,7 +68,7 @@
 						<div class="navbar-header"> 
 						<!-- Mobile Toggle Menu Button -->
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle visible-xs-block" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-						<a class="navbar-brand" href="index.html">Clean</a>
+						<a class="navbar-brand" href="index.html">Dagan's</a>
 						</div>
 						<div id="fh5co-navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
@@ -87,48 +82,50 @@
 	</header>
 	<!-- END .header -->
 	
-	
 	<div id="fh5co-main">
-		<div class="fh5co-intro text-center">
+		<div class="fh5co-intro text-left">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						<h1 class="intro-lead">Home automation</h1>
-						<p class="">project page</p>
+					<div class="col-md-9 col-md-offset-3">
+						<h1 class="intro-lead">IPC - Inter Process Communication</h1>
+						<p>An IPC is a very useful construct, It allows two separate processes running to synchronize between them,
+						and as an extension share data.</p>
+						<p>As a SW architect this gives the designer freedom in dividing the system into separate functional blocks, each running separately but still sharing their status with the other applications</p>
+						<p>Linux and C allows for many different solutions to this issue each with it's own advantages and disadvantages, I'll try and record here different options on how these are implemented as well as some code samples for free use.
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<div id="fh5co-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="row">
-							<div class="col-md-3 animate-box">
-								<h3>Description</h3>
-								<p>the home automation project aims to create a home automation project</p>
-								<ul class="fh5co-list-check">
-									<li>Description</li>
-									<li>elements</li>
-									<li>implementation</li>
-									<li>links</li>
-								</ul>
-							</div>
-							<div class="col-md-9">
-								<p class="animate-box">description</p>
-								<p class="animate-box">elements</p>
-								<p class="animate-box">implementation</p>
-								<p class="animate-box">links</p>
-							</div>
-						</div>
+		</div>	
+		<div id="fh5co-portfolio">
+			
+			<div class="fh5co-portfolio-line " id="signals">
+					<div class="fh5co-portfolio-line-figure animate-box" style="background-image: url(images/signalipc.jpg);background-overflow: visible;"></div>
+					<div class="fh5co-portfolio-line-description">
+						<h2>Using signals as an IPC</h2>
+						<p>I recently worked on a task that required the use of an IPC (Inter Process Communication) the idea is to implement a simple system <br>
+						I chose to use the signaling system. It worked great and provides a very simple solution for this task</p>
+						<p><a href="linux_signal.html" class="btn_small btn-primary">More...</a></p>
 					</div>
-				</div>
+			</div>
+			<div class="fh5co-portfolio-line " id="pipes">
+					<div class="fh5co-portfolio-line-figure animate-box" style="background-image: url(images/signalpipe.jpg);background-overflow: visible;"></div>
+					<div class="fh5co-portfolio-line-description">
+						<h2>Using named-pipes as an IPC</h2>
+						<p>As an option one can use named-pipes (fifos) as an IPC, effectively implementing a message queue held by the system</p>
+						<p><a href="linux_pipes.html" class="btn_small btn-primary">More...</a></p>
+					</div>
+			</div>
+			<div class="fh5co-portfolio-line " id="sockets">
+					<div class="fh5co-portfolio-line-figure animate-box" style="background-image: url(images/signalsocket.jpg);background-overflow: visible;"></div>
+					<div class="fh5co-portfolio-line-description">
+						<h2>Using sockets as an IPC</h2>
+						<p>One can also implement a socket through the loopback interface to implement an IPC, which can also be extended to a remote (ethernet) interface and create an IPC over remote connection</p>
+						<p><a href="linux_socket.html" class="btn_small btn-primary">More...</a></p>
+					</div>
 			</div>
 		</div>
-
-
-
+	</div>
+	
 	<footer id="fh5co-footer footer_paragraph">
 		<div class="container footer_paragraph">
 			<div class="row footer_paragraph">
@@ -151,8 +148,6 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
 

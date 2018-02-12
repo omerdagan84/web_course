@@ -1601,6 +1601,10 @@ p {
   }
 }
 
+.footer_paragraph {
+	height: 20px;
+}
+}
 small,
 .small {
   font-size: 85%;
@@ -7478,6 +7482,77 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 0em;
   }
 }
+/***************** lines */
+#fh5co-portfolio .fh5co-portfolio-line {
+  float: center;
+  width: 80%;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 15%;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-portfolio .fh5co-portfolio-line {
+    display: block;
+  }
+}
+#fh5co-portfolio .fh5co-portfolio-line .fh5co-portfolio-line-description {
+	display: block;
+	overflow:none;
+	height:auto;
+  width: 70%;
+}
+#fh5co-portfolio .fh5co-portfolio-line .fh5co-portfolio-line-figure {
+	display: block;
+	overflow:none;
+	height:auto;
+  width: 30%;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-portfolio .fh5co-portfolio-line .fh5co-portfolio-line-description,
+  #fh5co-portfolio .fh5co-portfolio-line .fh5co-portfolio-line-figure {
+    display: block;
+    width: 80%;
+  }
+}
+#fh5co-portfolio .fh5co-portfolio-line .fh5co-portfolio-line-figure {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-portfolio .fh5co-portfolio-line .fh5co-portfolio-line-figure {
+    height: 80px;
+  }
+}
+#fh5co-portfolio .fh5co-portfolio-line .fh5co-portfolio-line-description {
+  background: #fff;
+  padding: 1em;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+@media screen and (max-width: 1200px) {
+  #fh5co-portfolio .fh5co-portfolio-line .fh5co-portfolio-line-description {
+    padding: 2em;
+  }
+}
+@media screen and (max-width: 768px) {
+  #fh5co-portfolio .fh5co-portfolio-line .fh5co-portfolio-line-description {
+    padding: 1em;
+  }
+}
+#fh5co-portfolio .fh5co-portfolio-line .fh5co-portfolio-line-description h2 {
+  font-family: "Roboto Slab", arial, sans-serif;
+  font-size: 30px;
+  line-height: 34px;
+  font-weight: 300;
+}
+
+/***************** lines */
+
 #fh5co-portfolio .fh5co-portfolio-item {
   float: left;
   width: 100%;
@@ -7621,7 +7696,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   font-size: 18px;
 }
-
+.btn_small {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 5px;
+}
 /* Buttons */
 .btn {
   text-transform: uppercase;
